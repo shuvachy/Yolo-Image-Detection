@@ -23,7 +23,7 @@ results.print()  # or .show(), .save(), .crop(), .pandas(), etc.
 Inference with detect.py
 detect.py runs inference on a variety of sources, downloading models automatically from the latest YOLOv5 release and saving results to runs/detect.and saving results to runs/detect.
 
-python detect.py --weights yolov5s.pt --source 0                               # webcam
+python detect.py --weights yolov5l6.pt --source 0                               # webcam
                                                img.jpg                         # image
                                                vid.mp4                         # video
                                                screen                          # screenshot
@@ -33,3 +33,14 @@ python detect.py --weights yolov5s.pt --source 0                               #
                                                'path/*.jpg'                    # glob
                                                'https://youtu.be/LNwODJXcvt4'  # YouTube
                                                'rtsp://example.com/media.mp4'  # RTSP, RTMP, HTTP stream
+Results good with yolov5l6.pt
+
+(base) C:\Users\shuva\yolov5>python detect.py --weights yolov5l6.pt --source img.jpg
+detect: weights=['yolov5l6.pt'], source=img.jpg, data=data\coco128.yaml, imgsz=[640, 640], conf_thres=0.25, iou_thres=0.45, max_det=1000, device=, view_img=False, save_txt=False, save_csv=False, save_conf=False, save_crop=False, nosave=False, classes=None, agnostic_nms=False, augment=False, visualize=False, update=False, project=runs\detect, name=exp, exist_ok=False, line_thickness=3, hide_labels=False, hide_conf=False, half=False, dnn=False, vid_stride=1
+YOLOv5  v7.0-350-g6096750f Python-3.12.4 torch-2.4.0 CUDA:0 (NVIDIA GeForce RTX 2060, 6144MiB)
+
+Fusing layers...
+YOLOv5l6 summary: 476 layers, 76726332 parameters, 0 gradients, 111.2 GFLOPs
+image 1/1 C:\Users\shuva\yolov5\img.jpg: 512x640 2 persons, 3 potted plants, 60.4ms
+Speed: 0.0ms pre-process, 60.4ms inference, 67.7ms NMS per image at shape (1, 3, 640, 640)
+Results saved to runs\detect\exp6
